@@ -76,6 +76,50 @@ mkdir build
 cd build && cmake ../ && make
 ```
 
+If you want to build shared library **libsnappy.so**, you should add **BUILD_SHARED_LIBS** option, like
+```bash
+[root@localhost build]# cmake -DBUILD_SHARED_LIBS=ON ../
+...
+...
+
+[root@localhost build]# make
+[  2%] Building CXX object CMakeFiles/snappy.dir/snappy-c.cc.o
+[  4%] Building CXX object CMakeFiles/snappy.dir/snappy-sinksource.cc.o
+[  6%] Building CXX object CMakeFiles/snappy.dir/snappy-stubs-internal.cc.o
+[  9%] Building CXX object CMakeFiles/snappy.dir/snappy.cc.o
+
+[ 11%] Linking CXX shared library libsnappy.so
+[ 11%] Built target snappy
+[ 13%] Building CXX object CMakeFiles/snappy_test_support.dir/snappy-test.cc.o
+[ 16%] Building CXX object CMakeFiles/snappy_test_support.dir/snappy_test_data.cc.o
+[ 18%] Linking CXX shared library libsnappy_test_support.so
+[ 18%] Built target snappy_test_support
+
+
+[root@localhost build]# ll
+总用量 644
+drwxr-xr-x  2 root root   4096 5月  24 15:05 bin
+drwxr-xr-x  2 root root   4096 5月  24 15:10 cmake
+-rw-r--r--  1 root root  25622 5月  24 15:05 CMakeCache.txt
+drwxr-xr-x 10 root root   4096 5月  24 15:10 CMakeFiles
+-rw-r--r--  1 root root   5534 5月  24 15:05 cmake_install.cmake
+-rw-r--r--  1 root root   1825 5月  24 15:05 config.h
+-rw-r--r--  1 root root    573 5月  24 15:05 CTestTestfile.cmake
+drwxr-xr-x  2 root root   4096 5月  24 15:06 lib
+lrwxrwxrwx  1 root root     14 5月  24 15:05 libsnappy.so -> libsnappy.so.1
+lrwxrwxrwx  1 root root     18 5月  24 15:05 libsnappy.so.1 -> libsnappy.so.1.1.9
+-rwxr-xr-x  1 root root 149888 5月  24 15:05 libsnappy.so.1.1.9
+-rwxr-xr-x  1 root root  35344 5月  24 15:05 libsnappy_test_support.so
+-rw-r--r--  1 root root  19848 5月  24 15:10 Makefile
+-rwxr-xr-x  1 root root 122520 5月  24 15:06 snappy_benchmark
+-rw-r--r--  1 root root   2579 5月  24 15:05 snappy-stubs-public.h
+-rwxr-xr-x  1 root root  60728 5月  24 15:05 snappy_test_tool
+-rwxr-xr-x  1 root root 193408 5月  24 15:05 snappy_unittest
+drwxr-xr-x  4 root root   4096 5月  24 15:05 third_party
+
+
+```
+
 Usage
 =====
 
