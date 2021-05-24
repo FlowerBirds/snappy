@@ -1,4 +1,5 @@
-Snappy, a fast compressor/decompressor.
+# Snappy
+## A fast compressor/decompressor library.
 
 [![Build Status](https://travis-ci.org/google/snappy.svg?branch=master)](https://travis-ci.org/google/snappy)
 [![Build status](https://ci.appveyor.com/api/projects/status/t9nubcqkwo8rw8yn/branch/master?svg=true)](https://ci.appveyor.com/project/pwnall/leveldb)
